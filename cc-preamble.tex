@@ -1,0 +1,169 @@
+%--------------------------------------------------------------
+% Computational Complexity Preamble
+% Author: Antonis Antonopoulos
+%--------------------------------------------------------------
+
+%--------------------------------------------------------------
+%  COMPLEXITY COMMANDS DEFS
+%--------------------------------------------------------------
+%  General Notations
+\newcommand{\bO}[1]{\mathcal{O}\left({#1}\right)}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\cC}{co\mathcal{C}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\cF}{co\mathcal{F}}
+\newcommand{\zo}{\{0,1\}}
+\newcommand{\zon}{\{0,1\}^{n}}
+\newcommand{\zos}{\{0,1\}^{*}}
+\newcommand{\Ss}{\Sigma^{*}}
+\newcommand{\Cirfam}{\{C_{n}\}_{n\in\mathbb{N}}}
+\newcommand{\Prb}[2]{\Pr_{#1}\left[{#2}\right]}
+%---------------------------------------------------------
+
+
+%  Deterministic Classes
+\newcommand{\DTIME}[1]{\mathbf{DTIME}[#1]}
+\newcommand{\NTIME}[1]{\mathbf{NTIME}[#1]}
+\newcommand{\DSPACE}[1]{\mathbf{DSPACE}[#1]}
+\newcommand{\NSPACE}[1]{\mathbf{NSPACE}[#1]}
+\newcommand{\cP}{\mathbf{P}}
+\newcommand{\NP}{\mathbf{NP}}
+\newcommand{\cNP}{co\mathbf{NP}}
+\newcommand{\EXP}{\mathbf{EXP}}
+\newcommand{\E}{\mathbf{E}}
+\newcommand{\EE}{\mathbf{EE}}
+\newcommand{\NEXP}{\mathbf{NEXP}}
+\newcommand{\EXPSPACE}{\mathbf{EXPSPACE}}
+\newcommand{\NEXPSPACE}{\mathbf{NEXPSPACE}}
+\newcommand{\cL}{\mathbf{L}}
+\newcommand{\NL}{\mathbf{NL}}
+\newcommand{\cNL}{co\mathbf{NL}}
+\newcommand{\SL}{\mathbf{SL}}
+\newcommand{\PSPACE}{\mathbf{PSPACE}}
+\newcommand{\NPSPACE}{\mathbf{NPSPACE}}
+\newcommand{\Stwo}{\Sigma_{2}^{p}}
+\newcommand{\Ptwo}{\Pi_{2}^{p}}
+\newcommand{\Ttwo}{\Theta_{2}^{p}}
+\newcommand{\Ttwod}{\cP^{\NP[\log{n}]}}
+\newcommand{\Sp}[1]{\Sigma_{#1}^{p}}
+\newcommand{\Pp}[1]{\Pi_{#1}^{p}}
+\newcommand{\Dp}[1]{\Delta_{#1}^{p}}
+\newcommand{\Syp}[1]{S_{#1}^{p}}
+\newcommand{\Sytwo}{S_{2}^{p}}
+
+\newcommand{\PH}{\mathbf{PH}}
+\newcommand{\SUBEXP}{\mathbf{SUBEXP}}
+\newcommand{\QuasiP}{\mathbf{QuasiP}}
+
+\newcommand{\FP}{\mathbf{FP}}
+\newcommand{\FNP}{\mathbf{FNP}}
+\newcommand{\TFNP}{\mathbf{TFNP}}
+\newcommand{\FTtwod}{\FP^{\NP[\log{n}]}}
+%---------------------------------------------------------
+
+%  Randomized Classes
+\newcommand{\BPTIME}[1]{\mathbf{BPTIME}[#1]}
+\newcommand{\RTIME}[1]{\mathbf{RTIME}[#1]}
+\newcommand{\BPP}{\mathbf{BPP}}
+\newcommand{\RP}{\mathbf{RP}}
+\newcommand{\RL}{\mathbf{RL}}
+\newcommand{\cRP}{co\mathbf{RP}}
+\newcommand{\ZPP}{\mathbf{ZPP}}
+\newcommand{\PP}{\mathbf{PP}}
+%---------------------------------------------------------
+
+
+
+%  Counting Classes
+\newcommand{\sP}{{\#\mathbf{P}}}
+\newcommand{\oddP}{{\oplus\mathbf{P}}}
+\newcommand{\modP}{{\mathbf{Mod}_{k}\mathbf{P}}}
+\newcommand{\UP}{\mathbf{UP}}
+\newcommand{\FewP}{\text{\textbf{Few}}\mathbf{P}}
+%---------------------------------------------------------
+
+
+
+%  Interactive Proof Classes
+\newcommand{\IP}{\mathbf{IP}}
+\newcommand{\MA}{\mathbf{MA}}
+\newcommand{\cMA}{co\mathbf{MA}}
+\newcommand{\AM}{\mathbf{AM}}
+\newcommand{\cAM}{co\mathbf{AM}}
+\newcommand{\PCP}[2]{\mathbf{PCP}[#1,#2]}
+%---------------------------------------------------------
+
+
+%  Non-Uniform Classes
+\newcommand{\SIZE}[1]{\mathbf{SIZE}[#1]}
+\newcommand{\Ppoly}{\mathbf{P}_{\mathbf{/poly}}}
+\newcommand{\ACz}[1]{\mathbf{AC}^{0}[#1]}
+\newcommand{\ACCz}{\mathbf{ACC}^{0}}
+\newcommand{\NC}[1]{\mathbf{NC}^{#1}}
+\newcommand{\AC}[1]{\mathbf{AC}^{#1}}
+\newcommand{\TC}[1]{\mathbf{TC}^{#1}}
+\newcommand{\SC}[1]{\mathbf{SC}^{#1}}
+\newcommand{\RNC}{\mathbf{RNC}}
+\newcommand{\EXPpoly}{\mathbf{EXP}_{\mathbf{/poly}}}
+
+%---------------------------------------------------------
+
+
+
+
+%  Subclasses of TFNP
+\newcommand{\PLS}{\mathbf{PLS}}
+\newcommand{\PPA}{\mathbf{PPA}}
+\newcommand{\PPAD}{\mathbf{PPAD}}
+\newcommand{\PPP}{\mathbf{PPP}}
+%---------------------------------------------------------
+
+
+
+% Pseudo Classes
+\newcommand{\pseudo}[2]{\texttt{pseudo}_{#1}{#2}}
+%---------------------------------------------------------
+
+
+% Relations & Reductions
+\newcommand{\cs}{\subseteq}
+\newcommand{\cns}{\nsubseteq}
+\newcommand{\cps}{\subsetneq}
+
+\newcommand{\kred}{\le^{p}_{m}} %Karp Reduction
+\newcommand{\tred}{\le^{p}_{T}} %Cook/Turing Reduction
+\newcommand{\ttred}{\le^{p}_{tt}} %Truth-Table Reduction
+\newcommand{\lred}{\le_{l}} %Log-space reduction
+%---------------------------------------------------------
+
+
+% Common Languages/Problems
+\newcommand{\SAT}{\mathtt{SAT}}
+\newcommand{\sSAT}{\mathtt{\#SAT}}
+\newcommand{\PERM}{\mathtt{PERMANENT}}
+\newcommand{\TSP}{\mathtt{TSP}}
+\newcommand{\CVP}{\mathtt{CVP}}
+\newcommand{\GI}{\mathtt{GI}}
+\newcommand{\GNI}{\mathtt{GNI}}
+\newcommand{\FACT}{\mathtt{FACTORING}}
+\newcommand{\HP}{\mathtt{HALTING\ PROBLEM}}
+\newcommand{\TQBF}{\mathtt{TQBF}}
+
+%---------------------------------------------------------
+
+
+% Quantifier Characterizations
+\newcommand{\explus}{\exists^{+}}
+\newcommand{\qcc}[2]{(#1/#2)}
+%---------------------------------------------------------
+
+
+
+% Operators on Complexity Classes
+\newcommand{\opN}[1]{\mathcal{N}\cdotp{#1}}
+\newcommand{\opD}[1]{\Delta\cdotp{#1}}
+\newcommand{\BP}[1]{\mathcal{BP}\cdotp{#1}}
+\newcommand{\opP}[1]{\mathcal{P}\cdotp{#1}}
+\newcommand{\opR}[1]{\mathcal{R}\cdotp{#1}}
+\newcommand{\Alm}[1]{\text{Almost}{#1}}
+%---------------------------------------------------------
